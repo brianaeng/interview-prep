@@ -32,6 +32,7 @@ $(document).ready( function() {
   var sayQuestion = function() {
     currentQuestion = questions[number];
     var utterThis = new SpeechSynthesisUtterance(currentQuestion);
+    utterThis.rate = 0.8;
     synth.speak(utterThis);
   };
 
