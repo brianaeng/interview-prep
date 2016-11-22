@@ -1,7 +1,7 @@
 $(document).ready( function() {
   var synth = window.speechSynthesis;
 
-  var questions = ["Given a string, strip whitespace from it in-place", "Given a string, remove duplicate characters from it", "Given a string, reverse it", "Given a string with words separated by a space, reverse the words)", "Given an array of numbers, for each number find the product of all the other numbers", "Given a string, find if any permutation of the string is a palindrome"];
+  var questions = ["Given a string, strip whitespace from it in-place", "Given a string, remove duplicate characters from it", "Given a string, reverse it", "Given a string with words separated by a space, reverse the words)", "Given an array of numbers, for each number find the product of all the other numbers", "Given a string, find if any permutation of the string is a palindrome", "Given an unsorted array with integers between 1 and 1,000,000, find the one integer that is in the array twice.", "Given an array, return the sum of the two largest integers", "Given an array, return the largest sum of contiguous integers"];
 
   var number = Math.floor((Math.random() * questions.length));
 
@@ -12,11 +12,15 @@ $(document).ready( function() {
 
   $(".repeat, .show-example, .stop, .next").hide();
 
-  $(".start").click(function(){
-    // var number = Math.floor((Math.random() * questions.length));
+  var sayQuestion = function() {
     currentQuestion = questions[number];
     var utterThis = new SpeechSynthesisUtterance(currentQuestion);
     synth.speak(utterThis);
+  };
+
+  $(".start").click(function(){
+    // var number = Math.floor((Math.random() * questions.length));
+    sayQuestion();
     currentTime = Date.now(); //in milliseconds
 
     $(".start, .recorded-time").hide();
@@ -27,7 +31,7 @@ $(document).ready( function() {
     // });
   });
 
-  $(".next").click(function(){
+  var getQuestion = function() {
     $(".recorded-time").hide();
 
     if (number === (questions.length - 1)) {
@@ -38,21 +42,18 @@ $(document).ready( function() {
     }
 
     currentTime = Date.now(); //in milliseconds
-    currentQuestion = questions[number];
-    var utterThis = new SpeechSynthesisUtterance(currentQuestion);
-    synth.speak(utterThis);
+    sayQuestion();
+  };
 
-    // $(".show-example").click(function() {
-      // $(".example").html("<p>" + examples[number] + "</p>");
-    // });
+  $(".next").click(function(){
+    getQuestion();
   });
 
   $(".repeat").click(function() {
-    var utterThis = new SpeechSynthesisUtterance(currentQuestion);
-    synth.speak(utterThis);
+    sayQuestion();
   });
 
-  $(".stop").click(function() {
+  var showTimer = function(){
     var stopTime = Date.now();
     var duration = stopTime - currentTime;
     var milliseconds = parseInt((duration%1000)/100);
@@ -68,5 +69,22 @@ $(document).ready( function() {
 
     $(".recorded-time").html("<p>" + time + "</p>");
     $(".recorded-time").show();
+  };
+
+  $(".stop").click(function() {
+    showTimer();
   });
+
+  $("body").keydown(function(e) {
+    if (e.key === " ") {
+      showTimer();
+    }
+    else if (e.keyCode === 39) {
+      getQuestion();
+    }
+    else if (e.keyCode === 37) {
+      sayQuestion();
+    }
+  });
+
 });

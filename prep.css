@@ -23,3 +23,9 @@ button {
   text-decoration: none;
   display: inline-block;
 }
+
+.shortcuts {
+  margin: 10rem 0;
+  font-size: 80%;
+  color: rgb(105, 105, 105);
+}
