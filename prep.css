@@ -1,7 +1,25 @@
 body {
   text-align: center;
+  font-size: 1.25rem;
+  font-family: helvetica;
+}
+
+h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 6rem;
+  color: rgb(154, 34, 34);
 }
 
 div {
   margin: 3.5rem auto;
+}
+
+button {
+  font-size: 90%;
+  background-color: #c4c4c4;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }

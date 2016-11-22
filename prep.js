@@ -1,7 +1,7 @@
 $(document).ready( function() {
   var synth = window.speechSynthesis;
 
-  var questions = ["Strip whitespace from a string in-place", "Remove duplicate characters from a string", "Reverse a string", "Reverse words in a string, where words are separated by one or more spaces)"];
+  var questions = ["Given a string, strip whitespace from it in-place", "Given a string, remove duplicate characters from it", "Given a string, reverse it", "Given a string with words separated by a space, reverse the words)", "Given an array of numbers, for each number find the product of all the other numbers", "Given a string, find if any permutation of the string is a palindrome"];
 
   var number = Math.floor((Math.random() * questions.length));
 
@@ -10,10 +10,7 @@ $(document).ready( function() {
   var currentTime = null;
   // var examples = ["H e  llo W orl     d ==> HelloWord", "AAA BBB ==> A B", "Hello ==> olleH", "This is stuff ==> stuff is This"];
 
-  $(".repeat").hide();
-  $(".show-example").hide();
-  $(".stop").hide();
-  $(".next").hide();
+  $(".repeat, .show-example, .stop, .next").hide();
 
   $(".start").click(function(){
     // var number = Math.floor((Math.random() * questions.length));
@@ -22,11 +19,8 @@ $(document).ready( function() {
     synth.speak(utterThis);
     currentTime = Date.now(); //in milliseconds
 
-    $(".start").hide();
-    $(".next").show();
-    $(".repeat").show();
-    $(".show-example").show();
-    $(".stop").show();
+    $(".start, .recorded-time").hide();
+    $(".next, .repeat, .show-example, .stop").show();
 
     // $(".show-example").click(function() {
     //   $(".example").html("<p>" + examples[number] + "</p>");
@@ -34,6 +28,8 @@ $(document).ready( function() {
   });
 
   $(".next").click(function(){
+    $(".recorded-time").hide();
+
     if (number === (questions.length - 1)) {
       number = 0;
     }
@@ -71,5 +67,6 @@ $(document).ready( function() {
     var time = hours + ":" + minutes + ":" + seconds + "." + milliseconds;
 
     $(".recorded-time").html("<p>" + time + "</p>");
+    $(".recorded-time").show();
   });
 });
