@@ -9,7 +9,19 @@ $(document).ready( function() {
   "Given a string, find if any permutation of the string is a palindrome",
   "Given an unsorted array with integers between 1 and 1,000,000, find the one integer that is in the array twice.",
   "Given an array, return the sum of the two largest integers",
-  "Given an array, return the largest sum of contiguous integers"];
+  "Given an array, return the largest sum of contiguous integers",
+  "Given an array of Strings, return the length of the longest string in the list.",
+  "Given an array of Strings, write a method that replaces every string with two of that string",
+  "Given an array of numbers, write a method that moves the minimum value in the list to the front, otherwise preserving the order of the elements.",
+  "Given an array of Strings, write a method that that places a string of four asterisks in front of every string of length 4",
+  "Write a method named rotateRight that accepts an array of integers as a parameter and rotates the values in the array to the right (increases index) by one. The last value should become the first index",
+  "Write a method evens that accepts an integer parameter n and that returns the integer formed by removing the odd digits from n.",
+  "Write a method starString that accepts an integer parameter n and returns a string of stars (asterisks) 2n long (i.e., 2 to the nth power)",
+  "Write a method removeFront that takes an integer n as a parameter and that removes the first n values from a list of integers.",
+  "Write a function named isPangram that accepts a string and returns true if the string is a pangram. A pangram is any phrase that contains at least one of each of the 26 letters in the English alphabet (ignoring letter-casing)",
+  "Write a function named vowelCount that accepts a string and returns the number of vowels (a, e, i, o, or u) that the string contains."
+
+];
 
   var number = Math.floor((Math.random() * questions.length));
 
