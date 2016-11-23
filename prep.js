@@ -58,7 +58,7 @@ $(document).ready( function() {
     synth.cancel();
     currentQuestion = questions[number];
     var utterThis = new SpeechSynthesisUtterance(currentQuestion);
-    utterThis.rate = 0.7;
+    utterThis.rate = 0.8;
     utterThis.voice = voices[65];
     synth.speak(utterThis);
   };
