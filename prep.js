@@ -20,7 +20,6 @@ $(document).ready( function() {
   "Write a method removeFront that takes an integer n as a parameter and that removes the first n values from a list of integers.",
   "Write a function named isPangram that accepts a string and returns true if the string is a pangram. A pangram is any phrase that contains at least one of each of the 26 letters in the English alphabet (ignoring letter-casing)",
   "Write a function named vowelCount that accepts a string and returns the number of vowels (a, e, i, o, or u) that the string contains."
-
 ];
 
   var number = Math.floor((Math.random() * questions.length));
