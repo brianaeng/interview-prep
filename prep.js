@@ -27,18 +27,8 @@ $(document).ready( function() {
   var currentQuestion = null;
 
   var currentTime = null;
-  // var examples = ["H e  llo W orl     d ==> HelloWord",
-  // "AAA BBB ==> A B",
-  // "Hello ==> olleH",
-  // "This is stuff ==> stuff is This",
-  // "[1,2,3,4,5] ==> [14, 13, 12, 11, 10]",
-  // "aggppa ==> agppga (true)",
-  // "[1,2,345,213...2,23543] ==> 2",
-  // "[1,5,6,9,23,2] ==> 32",
-  // "[24,67,12,1,6,3] ==> 91"
-  // ];
 
-  $(".repeat, .show-example, .stop, .next").hide();
+  $(".repeat, .stop, .next").hide();
 
   var voices = [];
 
@@ -73,8 +63,6 @@ $(document).ready( function() {
   };
 
   var getQuestion = function() {
-    $(".show-example").show();
-    // $(".example-text").html("");
     $(".recorded-time").hide();
 
     if (number === (questions.length - 1)) {
@@ -106,22 +94,13 @@ $(document).ready( function() {
     $(".recorded-time").show();
   };
 
-  // var showExample = function() {
-  //   $(".show-example").hide();
-  //   $(".example-text").html("<p>" + examples[number] + "</p>");
-  // };
-
   $(".start").click(function(){
     sayQuestion();
     currentTime = Date.now(); //in milliseconds
 
     $(".start, .recorded-time").hide();
-    $(".next, .repeat, .show-example, .stop").show();
+    $(".next, .repeat, .stop").show();
   });
-
-  // $(".show-example").click(function() {
-  //   showExample();
-  // });
 
   $(".next").click(function(){
     getQuestion();
@@ -145,9 +124,6 @@ $(document).ready( function() {
     else if (e.keyCode === 37) {
       sayQuestion();
     }
-    // else if (e.keyCode === 40){
-    //   showExample();
-    // }
   });
 
 });
