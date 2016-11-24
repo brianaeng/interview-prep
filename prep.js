@@ -19,8 +19,9 @@ $(document).ready( function() {
   "Given an integer, return a string of stars (asterisks) 2n long (i.e., 2 to the nth power)",
   "Given an integer, remove the first n values from a list of integers.",
   "Given a string, return true if the string is a pangram. A pangram is any phrase that contains at least one of each of the 26 letters in the English alphabet",
-  "Given a string, return the number of vowels (a, e, i, o, or u) that the string contains."
-];
+  "Given a string, return the number of vowels (a, e, i, o, or u) that the string contains.",
+  "Given two lists of unordered numbers, find the intersection of the two lists (the numbers that are in common).",
+  "Given two strings, write a method to decide if one is a permutation of the other (different ordering of the same letters)"];
 
   var number = Math.floor((Math.random() * questions.length));
 
